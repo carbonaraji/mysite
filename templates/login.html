@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Авторизация пользователя</h1>
+<br>
+<form action="/login" method="post">
+  <label>имя</label><input type="text" name="name" required>
+  <label>пароль</label><input type="password" name="password" required>
+  <br>
+  <button type="submit">Авторизовать пользователя</button>
+</form>
+
+{% endblock %}

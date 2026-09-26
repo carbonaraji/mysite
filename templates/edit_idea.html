@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Изменить идею</h1>
+<br>
+<form action="/edit_idea/{{post.id}}" method="post">
+  <label>заголовок идеи</label><input type="text" name="title" value="{{post.title}}" required>
+  <label>картинка</label><input type="text" name="img" value="{{post.img}}" required>
+  <label>описание идеи</label><textarea name="content" rows="5" cols="30">{{post.content}}</textarea>
+  <br>
+  <button type="submit">отправить данные</button>
+</form>
+
+{% endblock %}

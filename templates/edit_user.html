@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Изменения пользователя</h1>
+<br>
+<form method="post">
+  <label>имя</label><input type="text" name="name" value="{{user.name}}" required>
+  <label>фото</label><input type="text" name="avatar" value="{{user.avatar}}" required>
+  <label>почта</label><input type="email" name="email" value="{{user.email}}" required>
+  <br>
+  <button type="submit">сохранить изменения</button>
+</form>
+
+{% endblock %}

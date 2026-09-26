@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Личный кабинет пользователя {{name}}</h1>
+<br>
+<img src="{{current_user.avatar}}">
+<p>Email: {{current_user.email}}</p>
+
+
+<form action="{{url_for('del_user', user_id=current_user.id)}}" method="post">
+<button type="submit">удалить пользователя</button>
+</form>
+
+
+
+<button type="submit">
+    <a class="edit" href="{{url_for('edit_user', user_id=current_user.id)}}">изменить пользователя</a>
+</button>
+
+{% endblock %}

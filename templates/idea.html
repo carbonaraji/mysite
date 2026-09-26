@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> идея {{my_idea.id}} </h1>
+<br>
+<h1> {{my_idea.title}} </h1>
+
+<img src="{{my_idea.img}}">
+
+<p> {{my_idea.content}} </p>
+
+<br>
+<form action="{{url_for('del_idea', idea_id=my_idea.id)}}" method="post">
+<button type="submit">удалить идею</button>
+</form>
+
+{% endblock %}

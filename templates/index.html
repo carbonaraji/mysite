@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if name=="Вари" %}
+<h1>главная страница {{name}}</h1>
+{% else %}
+<h1 style="color:red;">главная страница {{name}}</h1>
+{% endif %}
+
+    <br>
+    <img style="width:600px;" src='https://wallpapers.com/images/hd/roblox-logo-gtm4wouo6frcras0.jpg'>
+    <br>
+
+    <br>
+<h1> идеи для карт в роблокс </h1>
+{% for i in res %}
+<h1> {{i.post.title}} </h1>
+<a href="idea/{{i.post.id}}">
+<img class="t" src="{{i.post.img}}">
+</a>
+{% if current_user.is_authenticated %}
+<form action="{{url_for('like', idea_id=i.post.id)}}" method="post">
+{% if i.is_liked %}
+<button type="submit">❤️ {{i.likes_count}}</button>
+{% else %}
+<button type="submit">🖤</button>
+{% endif %}
+</form>
+{% endif %}
+{% endfor %}
+
+{% endblock %}

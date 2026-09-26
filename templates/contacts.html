@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>контакты вари</h1>
+<b>{{name}}</b>
+{% for k,v in list_contacts.items() %}
+<p>{{k}}-{{v}}</p>
+{% endfor %}
+{{list_contacts}}
+
+{% endblock %}

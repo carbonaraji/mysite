@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>варина страница</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+<nav class="top-menu">
+    <ul class="menu-main">
+        <li><a class="my" href='/'>перейти на главную</a></li>
+        {% if current_user.is_authenticated %} 
+        <li><a class="my" href='/add_idea'>добавить идею</a></li>
+        {% endif %}
+        <li><a class="my" href='/register'>регистрация</a></li>
+        <li><a class="my" href='/users'>пользователи</a></li>
+        {% if current_user.is_authenticated %}
+        <li><a class="my" href='/profile/{{current_user.name}}'><img src="{{current_user.avatar}}" style="width: 25px;"> профиль</a></li>
+        {% else %}
+        <li><a class="my" href='/login'>авторизация</a></li>
+        {% endif %}
+        <li><a class="my" href='/logout'>выйти</a></li>
+
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

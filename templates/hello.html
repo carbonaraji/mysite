@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style2.css')}}">
+</head>
+<body>
+<h1> всем привет </h1>
+<img style="width:600px;" src='https://cdn1.ozone.ru/s3/multimedia-8/6428229836.jpg'>
+
+        <li><a class="my" href='/contacts'>перейти в контакты</a></li>
+        <li><a class="my" href='/'>перейти на главную</a></li>
+{{Cartoons}}
+{% for k,v in Cartoons.items() %}
+<p>{{k}}---{{v}}</p>
+{% endfor %}
+
+</body>
+</html>

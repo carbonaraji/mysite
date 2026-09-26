@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добавить идею</h1>
+<br>
+<form action="/add_idea" method="post">
+  <label>заголовок идеи</label><input type="text" name="title" required>
+  <label>картинка</label><input type="text" name="img" required>
+  <label>описание идеи</label><textarea name="content" rows="5" cols="30"></textarea>
+  <br>
+  <button type="submit">отправить данные</button>
+</form>
+
+{% endblock %}
